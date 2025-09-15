@@ -3,38 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Data Hall Visualizer</title>
+  <title>Tools Portal</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to bottom right, #2d3e50, #4f6d7a);
-      color: white;
+      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      text-align: center;
+      min-height: 100vh;
     }
 
-    .container {
-      max-width: 600px;
-      padding: 30px;
+    .wrapper {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      max-width: 900px;
+      width: 100%;
+      padding: 40px 20px;
+    }
+
+    .card {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 16px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
     }
 
     h1 {
-      font-size: 2em;
+      font-size: 1.6em;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 0.95em;
       margin-bottom: 20px;
+      opacity: 0.9;
     }
 
     a.button {
       display: inline-block;
       padding: 12px 24px;
-      margin-top: 20px;
       background-color: #00aaff;
       color: white;
       text-decoration: none;
@@ -46,18 +65,27 @@
     a.button:hover {
       background-color: #0077cc;
     }
+
+    @media (max-width: 600px) {
+      .wrapper {
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Data Hall Visualizer</h1>
-    <p>Click below to launch the tool.</p>
-    <a class="button" href="Data_Hall_Visualizer/index.html">Launch Visualizer</a>
-  </div>
-    <div class="container">
-    <h1>GPA - JuFoP - Just Following Procedures</h1>
-    <p>Click below to launch the tool.</p>
-    <a class="button" href="JustFollowingProcedures/index.html">Launch JuFOP</a>
+  <div class="wrapper">
+    <div class="card">
+      <h1>Data Hall Visualizer</h1>
+      <p>Interactive tool to design and simulate data hall layouts.</p>
+      <a class="button" href="Data_Hall_Visualizer/index.html">Launch Visualizer</a>
+    </div>
+
+    <div class="card">
+      <h1>GPA - JuFoP</h1>
+      <p>Just Following Procedures – streamlined SOP guidance.</p>
+      <a class="button" href="JustFollowingProcedures/index.html">Launch JuFoP</a>
+    </div>
   </div>
 </body>
 </html>
